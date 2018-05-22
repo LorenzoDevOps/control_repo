@@ -5,6 +5,6 @@ class profile::base {
 
   file { '/root/README':
     ensure  => present,
-    content => "Ceci est un readme\nMon adresse ip est ${ipaddress}\n",
+    content => "Ceci est un README\nMon adresse ip est ${ipaddress}\n",
   }
 }

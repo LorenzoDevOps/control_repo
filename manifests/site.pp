@@ -1,4 +1,4 @@
  node default {
-  include role::base
+  include profile::base
 }
 

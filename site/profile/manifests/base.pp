@@ -4,6 +4,7 @@ class profile::base {
   }
 
   file { '/root/README':
-    ensure  => present,
+    ensure  => file,
+    content => "Bienvenue sur ${fqdn}\n",
   }
 }

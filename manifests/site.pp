@@ -8,7 +8,6 @@ node 'puppet' {
   include role::master_server
 }
 
-
 node /^puppet-client-/ {
-  include role::master_server
+  include role::client_role
 }

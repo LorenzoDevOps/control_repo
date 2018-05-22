@@ -1,4 +1,4 @@
- node default {
-  include profile::base
-}
+node default {
+ include profile::base
+ }
 

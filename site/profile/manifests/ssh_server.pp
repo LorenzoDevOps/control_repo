@@ -3,7 +3,7 @@ class profile::ssh_server {
     ensure  => present,
   }
   
-  service { 'ssh':
+  service { 'sshd':
     ensure  => 'running',
     enable  => 'true',
   }

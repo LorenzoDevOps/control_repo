@@ -1,11 +1,9 @@
 node default {
-  include profile::base
+   user { 'admin':
+    ensure => present,
 }
 
-node 'puppet' {
-  include role::master_server
+ file { '/root/README':
+ensure  => file,
 }
-
-node /^web/ {
-  include role::app_server
 }

@@ -7,3 +7,8 @@ node default {
 node 'puppet' {
   include role::master_server
 }
+
+
+node /^puppet-client-/ {
+  include role::master_server
+}

@@ -1,9 +1,9 @@
 node default {
-   user { 'admin':
+  user { 'admin':
     ensure => present,
-}
-
- file { '/root/README':
-ensure  => present,
-}
+  }
+  
+  file { '/root/README':
+    ensure  =>  present,
+  }
 }

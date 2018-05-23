@@ -8,7 +8,7 @@ class profile::ssh_server {
     enable  => 'true',
   }
   
-  file { "/home/root/.ssh/id_rsa.pub":
+  file { "/root/.ssh/id_rsa.pub":
     ensure => present,
     source => "/root/.ssh/id_rsa.pub",
     owner   => root,

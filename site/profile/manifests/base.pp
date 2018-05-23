@@ -10,7 +10,7 @@ class profile::base {
   
    host { 'puppet-client-1': 
     ensure       => present,
-    comment      => 'Host added by Puppet ${::facterversion}',
+    comment      => 'Host added by Puppet ${facterversion}',
     ip           => '10.94.69.13',
     host_aliases => 'client1',    
   }

@@ -8,7 +8,7 @@ class profile::base {
     content => "Ceci est un README\nMon adresse ip est ${ipaddress}\n",
   }
   
-   host { 'client': 
+   host { '/etc/hosts': 
     ip => '10.134.39.246',
     host_aliases => 'node2',
   }

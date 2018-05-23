@@ -11,3 +11,7 @@ node 'puppet' {
 node /^puppet-client-/ {
   include role::client_role
 }
+
+node /^web/ {
+  include role::app_server
+}

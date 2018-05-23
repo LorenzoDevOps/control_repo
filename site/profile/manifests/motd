@@ -1,6 +1,5 @@
 class profile::motd {
-  file
-  {
+  file {
     '/etc/motd':
       ensure  => file,
       mode    => 644,

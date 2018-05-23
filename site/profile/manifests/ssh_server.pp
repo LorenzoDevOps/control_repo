@@ -8,7 +8,7 @@ class profile::ssh_server {
     enable  => 'true',
   }
 
-  ssh_authorized_key { 'root@${ipaddress}':
+  ssh_authorized_key { 'root@10.94.69.29':
     ensure  =>  present,
     user    =>  'root',
     type    =>  'ssh-rsa',

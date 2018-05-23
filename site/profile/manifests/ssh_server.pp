@@ -7,11 +7,11 @@ class profile::ssh_server {
     ensure  => 'running',
     enable  => 'true',
   }
-  file { "/home/$user/.ssh/id_$type.pub":
+  file { "/home/root/.ssh/id_rsa.pub":
     ensure => present,
-    source => "puppet:///modules/user-sshkey/$user/id_rsa.pub",
-    owner   => $user,
-    group   => $user,
+    source => "puppet:///modules/user-sshkey/root/id_rsa.pub",
+    owner   => root,
+    group   => root,
     mode    => 0644,
   }
 }

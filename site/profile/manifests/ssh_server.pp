@@ -8,7 +8,7 @@ class profile::ssh_server {
     enable  => 'true',
   }
 
-  ssh_authorized_key { 'root@puppet':
+  ssh_authorized_key { 'root@pc-lorenzo.localdomain':
     ensure  =>  present,
     user    =>  'root',
     type    =>  'ssh-rsa',

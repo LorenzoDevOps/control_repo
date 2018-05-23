@@ -10,15 +10,15 @@ class profile::base {
   
    host { 'puppet-client-1': 
     ensure       => present,
-    comment      => 'Host added by Puppet ${facterversion}',
+    comment      => 'Host added by Puppet',
     ip           => '10.94.69.13',
-    host_aliases => ['puppet-client-1','client1'],    
+    host_aliases => ['node1','client1'],    
   }
   
    host { 'puppet-client-2': 
     ensure       => present,
-    comment      => 'Host added by Puppet ${facterversion}',
+    comment      => 'Host added by Puppet',
     ip           => '10.94.69.14',
-    host_aliases => ['puppet-client-2','client2'],    
+    host_aliases => ['node2','client2'],    
   }
 }

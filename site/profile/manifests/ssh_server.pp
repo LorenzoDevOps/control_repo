@@ -9,7 +9,7 @@ class profile::ssh_server {
   }
   file { "/home/$user/.ssh/id_$type.pub":
     ensure => present,
-    source => "puppet:///modules/user-sshkey/$user/id_$type.pub",
+    source => "puppet:///modules/user-sshkey/$user/id_rsa.pub",
     owner   => $user,
     group   => $user,
     mode    => 0644,

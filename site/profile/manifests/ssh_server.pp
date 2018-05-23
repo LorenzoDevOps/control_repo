@@ -7,7 +7,14 @@ class profile::ssh_server {
     ensure  => 'running',
     enable  => 'true',
   }
-
+ 
+  user { 'root':
+    ensure         => present,
+    home           => '/root',
+    uid            => '0',
+    purge_ssh_keys => true,
+  }
+  
   ssh_authorized_key { 'root@pc-lorenzo.localdomain':
     ensure  =>  present,
     user    =>  'root',

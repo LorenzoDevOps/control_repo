@@ -19,6 +19,6 @@ class profile::base {
     ensure       => present,
     comment      => 'Host added by Puppet',
     ip           => '10.94.69.14',
-    host_aliases => 'client2,    
+    host_aliases => 'client2',    
   }
 }

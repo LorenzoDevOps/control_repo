@@ -8,7 +8,7 @@ class profile::base {
     content => "Ceci est un README\nMon adresse ip est ${ipaddress}\n",
   }
   
-   host { '/etc/hosts': 
+   host { 'puppet-client-1': 
     ensure       => present,
     comment      => 'TEST ADDING HOSTS',
     ip => '10.134.39.11',

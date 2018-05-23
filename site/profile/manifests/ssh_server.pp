@@ -7,11 +7,10 @@ class profile::ssh_server {
     ensure  => 'running',
     enable  => 'true',
   }
-  
-  file { "/root/.ssh/id_rsa.pub":
-    ensure => present,
-    source => "/root/.ssh/id_rsa.pub",
-    owner   => root,
-    group   => root,    
+
+  sshkeys::set_authorized_key { 'root@puppet to root@puppet-client-1':
+  local_user  => 'root',
+  remote_user => 'root@puppet-client-1',
+  home        => '/root',
   }
 }

@@ -5,7 +5,7 @@ After=network-online.target
 Requires=network-online.target
 
 [Service]
-WorkingDirectory=/opt/minecraft
+WorkingDirectory=<% $install_dir %>
 ExecStart=/usr/bin/java -Xmx512M -Xms32M -jar server.jar nogui
 Restart=always
 

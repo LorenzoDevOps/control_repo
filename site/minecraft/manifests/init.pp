@@ -14,7 +14,8 @@ class minecraft (
   
   wget::fetch {"${url}":
     timeout => 15,
-    destination  => "${install_dir}",
+    destination  => "${install_dir}/",
+    before => Service['minecraft'],
   }
   
   #file {'/opt/minecraft/server.jar':

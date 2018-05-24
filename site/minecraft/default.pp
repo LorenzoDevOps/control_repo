@@ -6,10 +6,10 @@ class minecraft::defaults {
     $install_dir = '/var/lib/minecraft'
 
     # Maximum memory the JVM should use.
-    $min_memory = '1024M'
+    $min_memory = '32M'
 
     # Minimum memory the JVM will allocate.
-    $max_memory = '1024M'
+    $max_memory = '512M'
 
 
     # server.properties settings, see http://minecraft.gamepedia.com/Server.properties for explanation.

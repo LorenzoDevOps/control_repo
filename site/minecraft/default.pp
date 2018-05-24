@@ -3,7 +3,7 @@ class minecraft::defaults {
     ## General settings.
 
     # The installation directory for all Minecraft server files.
-    $install_dir = '/var/lib/minecraft'
+    $install_dir = '/opt/minecraft/'
 
     # Maximum memory the JVM should use.
     $min_memory = '32M'

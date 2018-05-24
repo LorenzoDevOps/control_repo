@@ -38,8 +38,8 @@ class minecraft (
     require => [
       Package['default-jre'],
       File["${install_dir}/eula.txt"],
-      File['/etc/systemd/system/minecraft.service'],
-      File["${install_dir}/server.jar"]
+      File['/etc/systemd/system/minecraft.service']
+     # File["${install_dir}/server.jar"]
       ],
   }
 }

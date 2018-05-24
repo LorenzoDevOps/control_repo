@@ -1,19 +1,27 @@
 
-class minecraft {
+class minecraft (
+ $url = 'https://launcher.mojang.com/mc/game/1.12.2/server/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar',
+ $install_dir = '/opt/minecraft'){
   file {'/opt/minecraft':
     ensure  =>  directory,
   }
   
-  file {'/opt/minecraft/eula.txt':
+  file {"${install_dir}/eula.txt":
     ensure  =>  file,
     content =>  'eula=true',
   }
   
-  file {'/opt/minecraft/server.jar':
+  wget ::fetch {"${install_dir}/server.jar":
     ensure  => file,
-    source  => 'puppet:///modules/minecraft/server.jar',
-    before => Service['minecraft'],
+    source  => $url,
+    destination  => "${install_dir}",
   }
+  
+  #file {'/opt/minecraft/server.jar':
+  #  ensure  => file,
+  #  source  => 'puppet:///modules/minecraft/server.jar',
+  #  before => Service['minecraft'],
+  #}
   
   package {'default-jre':
     ensure  =>  present,
@@ -22,12 +30,16 @@ class minecraft {
   file {'/etc/systemd/system/minecraft.service':
     ensure  =>  file,
     source  =>  'puppet:///modules/minecraft/minecraft.service',
-    # content => "[Unit]\nDescription=Minecraft Server\nWants=network.target\nAfter=network-online.target\nRequires=network-online.target\n\n[Service]\nWorkingDirectory=/opt/minecraft\nExecStart=/usr/bin/java -Xmx512M -Xms32M -jar server.jar nogui\nRestart=always\n\n[Install]\nWantedBy=multi-user.target\n",
-
   }
   
   service {'minecraft':
     ensure  =>  running,
     enable  =>  true,
+    require => [
+      Package['default-jre'],
+      File["${install_dir}/eula.txt"],
+      File['/etc/systemd/system/minecraft.service'],
+      File["${install_dir}/server.jar"]
+      ],
   }
 }

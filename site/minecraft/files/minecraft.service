@@ -1,0 +1,13 @@
+[Unit]
+Description=Minecraft Server
+Wants=network.target
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+WorkingDirectory=/opt/minecraft
+ExecStart=/usr/bin/java -Xmx512M -Xms32M -jar server.jar nogui
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

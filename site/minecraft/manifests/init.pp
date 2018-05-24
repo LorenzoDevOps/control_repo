@@ -30,7 +30,7 @@ class minecraft (
   
   file {'/etc/systemd/system/minecraft.service':
     ensure  =>  file,
-    # source  =>  'puppet:///modules/minecraft/minecraft.service',
+    # source  =>  'puppet:///modules/minecraft/minecraft.service', Mettre minecraft.service dans control_repo/site/minecraft/files/
     content  =>  epp('minecraft/minecraft.service.epp', {
      install_dir => $install_dir
     }),

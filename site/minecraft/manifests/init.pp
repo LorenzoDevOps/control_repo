@@ -11,7 +11,8 @@ class minecraft {
   
   file {'/opt/minecraft/server.jar':
     ensure  => file,
-    source  => 'puppet:///modules/minecraft/server.jar'
+    source  => 'puppet:///modules/minecraft/server.jar',
+    before => Service['minecraft'],
   }
   
   package {'default-jre':

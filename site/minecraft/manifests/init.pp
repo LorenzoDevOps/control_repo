@@ -18,7 +18,7 @@ class minecraft (
     before => Service['minecraft'],
   }
   
-  #file {'/opt/minecraft/server.jar':
+ # file {'/opt/minecraft/server.jar':
   #  ensure  => file,
   #  source  => 'puppet:///modules/minecraft/server.jar',
   #  before => Service['minecraft'],

@@ -12,7 +12,7 @@ class minecraft (
     content =>  'eula=true',
   }
   
-  wget ::fetch {"${url}":
+  wget::fetch {"${url}":
     timeout => 15,
     destination  => "${install_dir}",
   }

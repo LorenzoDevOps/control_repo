@@ -7,6 +7,10 @@ class minecraft {
     ensure  =>  file,
     content =>  'eula=true',
   }
+    
+  package {'default-jre':
+    ensure  =>  present,
+  }
   
   file { '/etc/systemd/system/minecraft.service':
     ensure => file,
@@ -14,10 +18,6 @@ class minecraft {
     owner  => 'root',
     group  => 'root',
     mode    => '0644',
-  }
-  
-  package {'default-jre':
-    ensure  =>  present,
   }
   
   service {'minecraft':
